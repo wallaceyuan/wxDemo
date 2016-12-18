@@ -1,0 +1,9 @@
+<!--board.wxml-->
+<import src="../common/movie-list.wxml"/>
+<view class="input border">
+    <scroll-view scroll-y="true" class="page-body"  bindscrolltolower="loadMore">
+        <view wx:for="{{books}}" wx:key="unique">
+            <template is="item1" data="{{ item, loading, hasMore, loadMore }}"/>
+        </view>
+    </scroll-view>
+</view>

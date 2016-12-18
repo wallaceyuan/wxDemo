@@ -1,0 +1,23 @@
+<!--kknews.wxml-->
+  <scroll-view scroll-y="true" style="height:600px;" class="page-body" bindscrolltolower="loadMore">
+    <view wx:for="{{infos}}" >
+        <navigator url="../item/item?id={{item.id}}">
+            <view wx:if="{{item.index == 0}}" class="bigPic">
+                <image class="poster" src="{{item.titlepic}}"></image>
+                <text>{{item.title}}</text>
+            </view>
+            <view wx:else class="kitem">
+                <view class="meta">
+                    <text class="title">{{item.title}}</text>
+                    <text class="key">{{item.keyboard.text}}</text>
+                </view>
+                <image src="{{item.titlepic}}"></image>
+            </view>
+        </navigator>
+    </view>
+    <view class="tips">
+      <view wx:if="{{hasMore}}"><image src="/images/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text></view>
+      <view wx:else><text>没有更多内容了</text></view>
+    </view>
+  </scroll-view>
+  <loading hidden="{{!loading}}">加载中...</loading>
