@@ -1,0 +1,99 @@
+.tabbar {
+	display:flex;
+	position: fixed;
+	width: 100%;
+	height: 8%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.tabbar .item{
+	width:33.33%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.item .icon {
+	width: 50rpx;
+	height: 50rpx;
+}
+.input-container {
+	height: 70%;
+	background-color: #eceff4;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0 10rpx;
+}
+.input-container textarea{
+	width:100%;
+	height: 100%;
+	font-size: 28rpx;
+	margin: 0px;
+	padding-top:10rpx;
+}
+.dailWrapper{
+	display:flex;
+	width:auto;
+	margin: 0 10rpx;
+	flex-direction:row;
+	justify-content:space-between;
+}
+.imgBlock{
+	width:150rpx;
+	height:150rpx;
+	position: relative;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	float:left;
+}
+.imgBlock span{
+	width:64rpx;
+	height:64rpx;
+	background:url('../../images/close.png') no-repeat top center;
+	background-size:100% 100%;
+	position: absolute;
+	top: 0rpx;
+	right: 0rpx;
+}
+.imgBlock .dailli{
+	width:100%;
+	height:100%;
+	border:1px solid #ddd;
+}
+.imgBlock .dailli image{
+	width:100%;
+	height:100%;
+}
+
+
+.address{
+	margin:0 10rpx;
+	color:#54bfe2;
+	position:fixed;
+	bottom:8.1%;
+	left:0;
+	padding:0 20rpx;
+}
+.address li{
+	border:1rpx solid #efefef;
+	border-radius: 10rpx;
+	background: #f6f6f6;
+	padding:5rpx 10rpx;
+}
+.picon{
+	display:inline-block;
+	width:30rpx;height:30rpx;background:url('../../images/tabbar/place.png') top center no-repeat;
+	background-size:100% 100%;
+}
+.pclose{
+	margin-left:10rpx;
+	border-left:1rpx solid #dfdfdf;
+	display:inline-block;
+	width:30rpx;height:30rpx;background:url('../../images/tabbar/cancelRed.png') top center no-repeat;
+	background-size:100% 100%;
+}

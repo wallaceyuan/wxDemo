@@ -1,16 +1,29 @@
 //app.js
+var wilddog = require('./utils/wilddog.js')
+
 App({
   onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    var config = {
+      syncURL: 'https://wallace741130.wilddogio.com',
+      authDomain: 'wallace741130.wilddog.com'
+    }
+    wilddog.initializeApp(config)
+    wilddog.auth().signInWeapp(function (err, user) {
+      console.log(err)
+      console.log(user)
+    })
   },
-  getUserInfo:function(cb){
+  getRef: function (name) {
+    console.log('getRef')
+    var refName = name ? 'todo/' + name : 'todo'
+    return wilddog.sync().ref(refName);
+  },
+  getUserInfo: function (cb) {
+    console.log('getUserInfo getUserInfo',this.globalData.userInfo)
     var that = this
-    if(this.globalData.userInfo){
+    if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
+    } else {
       //调用登录接口
       wx.login({
         success: function () {
@@ -24,7 +37,7 @@ App({
       })
     }
   },
-  globalData:{
-    userInfo:null
+  globalData: {
+    userInfo: null
   }
 })

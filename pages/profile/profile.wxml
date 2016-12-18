@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<import src="../common/movie-list.wxml"/>
+<view class="timeline">
+	<view wx:for = "{{todo}}"  class="item-container"  bindtap="showDetail"  wx:key="{{idx}}">
+		<view wx:for="{{item['.value']['image']}}" wx:for-item="todoItem" wx:key="{{idx}}">
+			<image src="{{todoItem}}"  class="cover"></image>
+		</view>
+		<text class="desc">{{item['.value']['text']}}</text>
+		<view wx:if="{{item['.value']['address']}}" class="address">
+			<span class="picon"></span>{{item['.value']['address']}}
+		</view>
+	</view>
+	<a class="addTxt" bindtap="add"></a>
+</view>

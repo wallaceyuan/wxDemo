@@ -1,0 +1,34 @@
+<import src="../common/movie-list.wxml"/>
+
+<view  style="width:100%;height:100%">
+	<view class="input-container">
+		<textarea placeholder="" bindblur="bindTextAreaBlur" bindinput="bindinput"  bindchange="bindChange" auto-focus value="{{text}}"/>
+	</view>
+  <view class="dailWrapper">
+    <view wx:for="{{imgBox}}" class="imgBlock" wx:key="{{index}}">
+      <span bindtap="delImg" data-index="{{index}}"></span>
+      <image src="{{item}}" class="dailli"></image>
+    </view>
+  </view>
+</view>
+<view class="address" wx:if="{{status}}">
+  <li>
+    <span class="picon"></span>
+    {{address}}
+    <span bindtap="cancelPlace" class="pclose"></span>
+  </li>
+</view>
+<view class="tabbar">
+  <view class="item" bindtap="addImg">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/image.png"></image>
+  </view>
+  <view class="item" bindtap="addPlace">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/place.png"></image>
+  </view>
+  <view class="item" bindtap="ok">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/ok.png"></image>
+  </view>
+  <view class="item" bindtap="cancel">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/cancel.png"></image>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+.tc{text-align:center;}
+.timeline textarea{width:100%;}
+.fucButton{position:absolute;bottom:0;left:10px;width:100%;}
+.fucButton button{display:inline-block;width:33%;}
+.timeline .button button{display:inline-block;box-sizing:border-box;width:50%;border:1px solid #ddd;text-align:center;font-size:15px;}
+.tc video{margin-bottom:10rpx;}
+.page-header-text{padding:40rpx;font-size:100rpx;}
+.user{display:flex;flex-direction:column;align-items:center;}
+.user-avatar{margin:20rpx;width:520rpx;height:520rpx;}
+.user-nickname{color:#aaa;}
+.usermotto{margin-top:200px;}
+
+page{
+  background-color:#eceff4;
+}
+.timeline{position: relative;}
+.timeline a.addTxt{
+  position: fixed;
+  top: 10rpx;right: 10rpx;
+  background:orange url('../../images/add.png') no-repeat top center;
+  background-size: 100% 100%;
+  width:64rpx;
+  height:64rpx;
+}
+.item-container {
+  margin-bottom:10px;
+  padding:10px;
+  position: relative;
+  background: #fff;
+}
+.cover {
+  width: 100%;
+  display: block;
+  margin-bottom:20rpx;
+}
+.desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:32rpx
+}
+.address{
+  height:30rpx;line-height:30rpx;
+  vertical-align: middle;
+  font-size:25rpx;
+}
+.desc .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.picon{
+  display:inline-block;
+  width:30rpx;height:30rpx;background:url('../../images/tabbar/place.png') center center no-repeat;
+  background-size:100% 100%;
+}
