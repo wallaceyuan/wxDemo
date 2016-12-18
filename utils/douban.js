@@ -15,6 +15,13 @@ function fetchApi(type, params) {
 }
 
 module.exports = {
+  find (type, page, count , search) {
+    page = page||1,count = count||20,search = search || ''
+    var params = { 'start': (page - 1) * count, 'count': count }
+    search ? params.q = search : params
+    return fetchApi(type, params)
+      .then(function(res){return res.data })
+  },
   findSeries(id) {
     return fetchApi('series/' + id + '/books', '')
       .then(function (res) {
@@ -23,8 +30,8 @@ module.exports = {
   },
   findLink(id) {
     console.log('findLink')
-    var p1 = fetchApi('/' + id,'')
-    var p2 = fetchApi('/' + id + '/annotations?order=rank','')
+    var p1 = fetchApi('/' + id, '')
+    var p2 = fetchApi('/' + id + '/annotations?order=rank', '')
     return Promise.all([p1, p2])
       .then(function (value) {
         console.log('value0', value[0])
