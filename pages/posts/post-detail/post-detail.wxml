@@ -1,6 +1,8 @@
 <view class="container">
-    <image class="head-image" src="{{postData.headImgSrc}}"></image>
-    <image class="play-audio" src="{{isPlayingMusic? '/images/music/music-stop.png':'/images/music/music.png'}}" mode="aspectFill" bindtap = "onMusicTap"></image>
+    <view class="head-image">
+        <image src="{{isPlayingMusic? postData.music.coverImg : postData.headImgSrc}}"></image>
+    </view>
+    <image class="play-audio" src="{{isPlayingMusic? '/images/music/music-stop.png':'/images/music/music-start.png'}}" mode="aspectFill" bindtap = "onMusicTap"></image>
     <view class="author-date">
         <image class="avatar" src="{{postData.avatar}}"></image>
         <text class="author">{{postData.author}}</text>
@@ -13,7 +15,6 @@
         <view class="circle-img">
             <image wx:if="{{collected}}" catchtap="onCollectionTap" src="/images/icon/collection.png"/>
             <image wx:else catchtap="onCollectionTap" src="/images/icon/collection-anti.png"/>
-
             <image bindtap="onShareTap" class="share-img" src="/images/icon/share.png" />
         </view>
         <view class="horizon"></view>

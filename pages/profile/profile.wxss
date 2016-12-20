@@ -17,7 +17,7 @@ page{
 .timeline a.addTxt{
   position: fixed;
   top: 10rpx;right: 10rpx;
-  background:orange url('../../images/add.png') no-repeat top center;
+  background:orange url('/images/add.png') no-repeat top center;
   background-size: 100% 100%;
   width:64rpx;
   height:64rpx;

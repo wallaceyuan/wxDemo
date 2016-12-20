@@ -8,6 +8,11 @@
   height: 460rpx;
  }
 
+ .head-image image{
+   width: 100%;
+   height: 100%;
+ }
+
 .play-audio {
   width: 102rpx;
   height: 110rpx;

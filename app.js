@@ -19,7 +19,7 @@ App({
     return wilddog.sync().ref(refName);
   },
   getUserInfo: function (cb) {
-    console.log('getUserInfo getUserInfo',this.globalData.userInfo)
+    console.log('getUserInfo getUserInfo', this.globalData.userInfo)
     var that = this
     if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
@@ -38,6 +38,8 @@ App({
     }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    g_isPlayingMusic: false,
+    g_isPlayingId: null
   }
 })

@@ -2,14 +2,14 @@
 
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:key="unique" wx:for="{{imgUrls}}">
+  <block wx:for="{{imgUrls}}" wx:key="unique">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      <image src="{{item.src}}" class="slide-image" width="355" height="150" catchtap="onPostTap" data-postId="{{item.postId}}"/>
     </swiper-item>
   </block>
 </swiper>
 
-<block wx:key="unique" wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+<block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="unique">
   <view catchtap="onPostTap" data-postId="{{item.postId}}">
     <template is="postItem"  data="{{...item}}"></template>
   </view>
