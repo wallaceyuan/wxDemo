@@ -40,8 +40,10 @@ page{
   font-size:32rpx
 }
 .address{
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 30rpx;
   height:30rpx;line-height:30rpx;
-  vertical-align: middle;
   font-size:25rpx;
 }
 .desc .right {
