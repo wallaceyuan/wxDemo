@@ -41,14 +41,14 @@ Page({
 
 		this.setData({imgBox:[],text:''})
 		/*跳转*/
-		wx.redirectTo({
+		wx.switchTab({
 			url: "../profile/profile",
 		});
 	},
 	cancel(){
 		this.setData({imgBox:[],text:''})
 		/*跳转*/
-		wx.redirectTo({
+		wx.switchTab({
 			url: "../profile/profile",
 		});
 	},
@@ -56,10 +56,11 @@ Page({
 		this.setData({address:'',status:false})
 	},
 	addPlace(){
+		var that = this
 		wx.chooseLocation({
 			success:function(res){
 				var address = res.name
-				this.setData({status:true,address:address})
+				that.setData({status:true,address:address})
 			}
 		})
 	},

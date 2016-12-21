@@ -16,14 +16,14 @@ page{
 .timeline{position: relative;}
 .timeline a.addTxt{
   position: fixed;
-  top: 10rpx;right: 10rpx;
-  background:orange url('/images/add.png') no-repeat top center;
+  bottom: 10rpx;right: 10rpx;
+  background:orange url('http://www.wallaceyuan.site/skin/images/wx/demo/add.png') no-repeat top center;
   background-size: 100% 100%;
   width:64rpx;
   height:64rpx;
 }
 .item-container {
-  margin-bottom:10px;
+  margin-top:10px;
   padding:10px;
   position: relative;
   background: #fff;
@@ -36,11 +36,11 @@ page{
 .desc {
   font-size:30rpx;
   word-wrap:break-word;
+  margin-bottom: 30rpx;
 }
 .address{
   display: flex;
   flex-flow: row wrap;
-  margin-top: 30rpx;
 }
 .address text{
   margin-left:10rpx;
@@ -51,6 +51,13 @@ page{
 .picon{
   display:inline-block;
   width:30rpx;height:30rpx;
-  background:url('../../images/tabbar/place.png') center center no-repeat;
+  background:url('http://www.wallaceyuan.site/skin/images/wx/demo/tabbar/place.png') center center no-repeat;
   background-size:100% 100%;
+}
+.opeImg{
+    position: absolute;top: 10rpx;right: 0rpx;
+    width: 45rpx;height: 30rpx;
+    padding: 10rpx;
+    background:url('http://www.wallaceyuan.site/skin/images/wx/demo/arrowDown.png') center center no-repeat;
+    background-size:100% 100%;
 }

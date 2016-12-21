@@ -14,8 +14,7 @@ Page({
     post_content: {}
   },
   onLoad() {
-    this.data.postList = postData.postList
-    //this.setData({ post_content: postData.postList })
+    this.setData({ postList: postData.postList })
   },
   onPostTap(event) {
     var postId = event.currentTarget.dataset.postid

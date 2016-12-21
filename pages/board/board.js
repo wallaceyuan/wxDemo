@@ -42,7 +42,7 @@ Page({
       })
   },
   onBindFocus(){
-    
+
   },
   lower(e) {
     var that = this
@@ -63,8 +63,10 @@ Page({
       })
   },
   search(e) {
+    console.log(e.detail.value)
     this.setData({
-      searching: true
+      searching: true,
+      page:1
     })
     var that = this
     if (!e.detail.value) return

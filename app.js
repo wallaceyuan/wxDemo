@@ -14,7 +14,7 @@ App({
     })
   },
   getRef: function (name) {
-    console.log('getRef')
+    //console.log('getRef')
     var refName = name ? 'todo/' + name : 'todo'
     return wilddog.sync().ref(refName);
   },
@@ -29,6 +29,7 @@ App({
         success: function () {
           wx.getUserInfo({
             success: function (res) {
+              console.log(res.userInfo)
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
@@ -38,7 +39,15 @@ App({
     }
   },
   globalData: {
-    userInfo: null,
+    userInfo: {
+      avatarUrl:"http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIUBxyYZDdicejct6gkBDRZnIwRmGBkl6u10ncszVy5clWibCV9bUf2hlnW22nLKanKOa9LIKIxatrA/0",
+      city: "",
+      country:"",
+      gender :1,
+      language:"zh_CN",
+      nickName:"圆儿圈圈",
+      province:""
+    },
     g_isPlayingMusic: false,
     g_isPlayingId: null
   }

@@ -8,7 +8,9 @@ Page({
 	onLoad(option) {
 		var postid = option.id
 		this.data.currentPostId = postid
-		this.data.postData = postData.postList[postid]
+		this.setData({
+			postData:postData.postList[postid]
+		})
 		var postsCollected = wx.getStorageSync('post_collected')
 		if (postsCollected) {
 			var collected = postsCollected[postid]

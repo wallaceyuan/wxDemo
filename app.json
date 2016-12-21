@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/board/board",
     "pages/index/index",
+    "pages/board/board",
+    "pages/posts/posts",
     "pages/profile/profile",
     "pages/new/new",
     "pages/item/item",
-    "pages/posts/posts",
     "pages/posts/post-detail/post-detail",
     "pages/kknews/kknews"
   ],

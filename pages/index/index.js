@@ -5,8 +5,14 @@ Page({
     userInfo: {}
   },
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../board/board'
+    wx.switchTab({
+      url: '../board/board',
+      success:function(e){
+        console.log(e)
+      },
+      fail:function(e){
+        console.log('fail',e)
+      }
     })
   },
   onLoad: function () {
