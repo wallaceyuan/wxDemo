@@ -7,7 +7,8 @@
 		</view>
 		<text class="desc">{{item['.value']['text']}}</text>
 		<view wx:if="{{item['.value']['address']}}" class="address">
-			<span class="picon"></span><text>{{item['.value']['address']}}</text>
+			<span class="picon"></span>
+			<text>{{item['.value']['address']}}</text>
 		</view>
 	</view>
 	<a class="addTxt" bindtap="add"></a>

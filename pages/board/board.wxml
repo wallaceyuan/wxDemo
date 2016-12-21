@@ -1,9 +1,19 @@
 <!--board.wxml-->
 <import src="../common/movie-list.wxml"/>
-<view class="input border">
-    <scroll-view scroll-y="true" class="page-body"  bindscrolltolower="loadMore">
-        <view wx:for="{{books}}" wx:key="unique">
+<view class="border">
+    <view class="search">
+        <!--<image class="search-img" src="/images/icon/search.png"></image>-->
+        <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+        <input class="search-input" type="text" placeholder="{{subtitle}}" placeholder-class="font" 
+        bindchange = "search" bindfocus="onBindFocus"/>
+        <image class="xx-img" src="/images/icon/xx.png" wx-if="{{searchPannelShow}}" bindtap="onCancleImgTap"></image>
+    </view>
+    <view wx:if="{{!searching}}">
+        <view wx:for="{{books}}" wx:key="unique" class="bookList">
             <template is="item1" data="{{ item, loading, hasMore, loadMore }}"/>
         </view>
-    </scroll-view>
+    </view>
+    <view wx:else>
+        <template is="book-list" data="{{ books, loading, hasMore, loadMore }}"/>
+    </view>
 </view>

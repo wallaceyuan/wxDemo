@@ -1,11 +1,10 @@
 {
   "pages": [
+    "pages/board/board",
     "pages/index/index",
     "pages/profile/profile",
     "pages/new/new",
-    "pages/board/board",
     "pages/item/item",
-    "pages/search/search",
     "pages/posts/posts",
     "pages/posts/post-detail/post-detail",
     "pages/kknews/kknews"
@@ -28,12 +27,6 @@
         "pagePath": "pages/board/board",
         "iconPath": "images/board.png",
         "selectedIconPath": "images/board-actived.png"
-      },
-      {
-        "text": "搜索",
-        "pagePath": "pages/search/search",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search-actived.png"
       },
       {
         "text": "随笔",

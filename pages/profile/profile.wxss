@@ -34,25 +34,23 @@ page{
   margin-bottom:20rpx;
 }
 .desc {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size:32rpx
+  font-size:30rpx;
+  word-wrap:break-word;
 }
 .address{
   display: flex;
   flex-flow: row wrap;
   margin-top: 30rpx;
-  height:30rpx;line-height:30rpx;
-  font-size:25rpx;
 }
-.desc .right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.address text{
+  margin-left:10rpx;
+  height:30rpx;
+  line-height: 30rpx;
+  font-size:27rpx;
 }
 .picon{
   display:inline-block;
-  width:30rpx;height:30rpx;background:url('../../images/tabbar/place.png') center center no-repeat;
+  width:30rpx;height:30rpx;
+  background:url('../../images/tabbar/place.png') center center no-repeat;
   background-size:100% 100%;
 }

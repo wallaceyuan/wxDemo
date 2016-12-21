@@ -1,7 +1,0 @@
-<!-- 搜索电影 -->
-<import src="../common/movie-list.wxml"/>
-
-<view class="page-header">
-  <input class="page-header-text" placeholder="{{subtitle}}" bindchange="search"/>
-</view>
-<template is="book-list" data="{{ books, loading, hasMore, loadMore }}"/>
