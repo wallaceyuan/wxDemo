@@ -35,6 +35,7 @@ Page({
       .then(function (d) {
         console.log(d)
         that.setData({ books: d.books, loading: false })
+        //wx.stopPullDownRefresh()
       })
       .catch(function (e) {
         console.error(e)

@@ -26,7 +26,7 @@ App({
     } else {
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function (result) {
           wx.getUserInfo({
             success: function (res) {
               console.log(res.userInfo)
@@ -39,15 +39,7 @@ App({
     }
   },
   globalData: {
-    userInfo: {
-      avatarUrl:"http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIUBxyYZDdicejct6gkBDRZnIwRmGBkl6u10ncszVy5clWibCV9bUf2hlnW22nLKanKOa9LIKIxatrA/0",
-      city: "",
-      country:"",
-      gender :1,
-      language:"zh_CN",
-      nickName:"圆儿圈圈",
-      province:""
-    },
+    userInfo: null,
     g_isPlayingMusic: false,
     g_isPlayingId: null
   }

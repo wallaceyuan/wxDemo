@@ -1,8 +1,7 @@
 // wx相关 API 操作
 var wxFunc = require('../../utils/wx.js')
 var app = getApp();
-var name = app.globalData.userInfo.nickName
-var ref = app.getRef(name);
+var name,ref
 var itemList = ['删除']
 
 Page({
@@ -48,7 +47,8 @@ Page({
     attr == "mark" ? this.setData({ mark: true }) : this.setData({ mark: false })
   },
   getList: function () {
-
+    name = app.globalData.userInfo.nickName
+    ref = app.getRef(name);
     ref.bindAsArray(this, 'todo');
   },
   onLoad() {
