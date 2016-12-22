@@ -1,0 +1,12 @@
+<!--pages/setfunc/setfunc.wxml-->
+<view class="widgets__item">
+    <view class="widgets__info" catchtap="scanCodeFunc">
+        <text class="widgets__info-name">扫码</text>
+    </view>
+    <view>
+    <navigator url="./message/message">
+        <view class="widgets__info">
+            <text class="widgets__info-name">消息模板</text>
+        </view>
+    </navigator>
+</view>

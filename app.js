@@ -1,5 +1,6 @@
 //app.js
 var wilddog = require('./utils/wilddog.js')
+var wxlogin = require('./utils/wxlogin.js')
 
 App({
   onLaunch: function () {
@@ -12,6 +13,7 @@ App({
       console.log(err)
       console.log(user)
     })
+    wxlogin.wxLogin()
   },
   getRef: function (name) {
     //console.log('getRef')
@@ -26,10 +28,9 @@ App({
     } else {
       //调用登录接口
       wx.login({
-        success: function (result) {
+        success: function (result) {//result 传回code
           wx.getUserInfo({
             success: function (res) {
-              console.log(res.userInfo)
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
