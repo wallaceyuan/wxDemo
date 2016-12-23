@@ -2,7 +2,6 @@
   "pages": [
     "pages/setfunc/message/message",
     "pages/setfunc/setfunc",
-    "pages/index/index",
     "pages/board/board",
     "pages/posts/posts",
     "pages/profile/profile",

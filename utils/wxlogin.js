@@ -1,15 +1,16 @@
 
-function wxLogin() {
+function wxLogin(cb) {
     var that = this
     var session = wx.getStorageSync('3rd_session')
+    console.log('wxlogin',session)
     if (session) {
-        wxCheckSession(session)
+        wxCheckSession(session,cb)
     } else {
-        wxGetSession()
+        wxGetSession(cb)
     }
 }
 
-function wxCheckSession(session) {
+function wxCheckSession(session, cb) {
     wx.request({
         url: 'http://127.0.0.1:3000/wxlogin/check',
         data: {
@@ -18,8 +19,9 @@ function wxCheckSession(session) {
         success: function (result) {
             if (result.data != 200) {
                 wx.removeStorageSync('3rd_session')
-                wxGetSession()
+                wxGetSession(cb)
             } else {
+                typeof cb == "function" && cb(session)
                 console.log('已经登录')
             }
         },
@@ -29,7 +31,7 @@ function wxCheckSession(session) {
     })
 }
 
-function wxGetSession() {
+function wxGetSession(cb) {
     console.log('登录')
     wx.login({
         success: function (res) {
@@ -43,6 +45,7 @@ function wxGetSession() {
                     success: function (result) {
                         var session = result.data.session
                         wx.setStorageSync('3rd_session', session)
+                        typeof cb == "function" && cb(session)
                     },
                     fail: function (e) {
                         console.log(e)

@@ -13,7 +13,9 @@ App({
       console.log(err)
       console.log(user)
     })
-    wxlogin.wxLogin()
+    //wxlogin.wxLogin(function(data){
+      //console.log('wxlogin data',data)
+    //})
   },
   getRef: function (name) {
     //console.log('getRef')
