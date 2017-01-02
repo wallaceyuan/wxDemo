@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/setfunc/message/message",
     "pages/setfunc/setfunc",
     "pages/board/board",
@@ -32,14 +33,14 @@
       {
         "text": "随笔",
         "pagePath": "pages/posts/posts",
-        "iconPath": "images/posts.png",
-        "selectedIconPath": "images/posts-actived.png"
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board-actived.png"
       },
       {
         "text": "新闻",
         "pagePath": "pages/kknews/kknews",
-        "iconPath": "images/kknews.png",
-        "selectedIconPath": "images/kknews-actived.png"
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board-actived.png"
       },
       {
         "text": "我的",
@@ -50,8 +51,8 @@
       {
         "text": "设置",
         "pagePath": "pages/setfunc/setfunc",
-        "iconPath": "images/set.png",
-        "selectedIconPath": "images/set-actived.png"
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-actived.png"
       }
     ]
   },

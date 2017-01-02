@@ -8,7 +8,7 @@ Page({
     this.setData({
       "formId": e.detail.formId
     })
-    this.formTest()
+    this.formRequest()
     console.log('form发生了submit事件，携带数据为：', e.detail)
   },
   formReset: function () {
@@ -16,7 +16,7 @@ Page({
   },
   formTest() {
     wx.request({
-      url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=SeiCBIoJP4jJQDIFYvUr61NyH0Ilvw8vANsRMepWeGIGG7oolsnr8xrBvF19cFSLLTgJzrwOL3Ok9NlPxU75vnaIY4xfzjyWPCOBMmLvyFcBCAiAHAIJH',
+      url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=dVazjowyAbeHAL9_wbcoEn17z3mWgvC1eJ8bcSLQ86hLXISzfsazfzof_mlAAEA-HmesHS5gNKHGLnMED41MIl29pGAPmrM3n2aH_7rn5anm2GIkrYQzQ6WEisVpMY6XDKVbAGARYJ',
       data: {
         "touser": "oHRD60DX-g3Y6CJEoBqLgubHeqAQ",
         "template_id": "Y2l6DmEGLNybEsr4CkaI1f4DjNvF8uFs8V6s_hpUKXQ",
@@ -56,11 +56,12 @@ Page({
   },
   formRequest() {
     var formId = this.data.formId
+    console.log('formId',formId)
     var template_id = 'Y2l6DmEGLNybEsr4CkaI1f4DjNvF8uFs8V6s_hpUKXQ'
     wxlogin.wxLogin(function (data) {
       var session = data
       wx.request({
-        url: 'http://127.0.0.1:3000/wxlogin/template',
+        url: 'https://api.wallaceyuan.cn/wxlogin/template',
         data: {
           'formId': formId,
           'template_id': template_id,

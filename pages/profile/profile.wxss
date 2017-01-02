@@ -16,7 +16,7 @@ page{
 .timeline{position: relative;}
 .timeline a.addTxt{
   position: fixed;
-  bottom: 10rpx;right: 10rpx;
+  top: 10rpx;right: 10rpx;
   background:orange url('http://www.wallaceyuan.site/skin/images/wx/demo/add.png') no-repeat top center;
   background-size: 100% 100%;
   width:64rpx;

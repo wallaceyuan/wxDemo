@@ -12,7 +12,7 @@ function wxLogin(cb) {
 
 function wxCheckSession(session, cb) {
     wx.request({
-        url: 'http://127.0.0.1:3000/wxlogin/check',
+        url: 'https://api.wallaceyuan.cn/wxlogin/check',
         data: {
             session: session
         },
@@ -38,7 +38,7 @@ function wxGetSession(cb) {
             if (res.code) {
                 //发起网络请求
                 wx.request({
-                    url: 'http://127.0.0.1:3000/wxlogin',
+                    url: 'https://api.wallaceyuan.cn/wxlogin',
                     data: {
                         code: res.code
                     },

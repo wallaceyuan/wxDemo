@@ -74,14 +74,16 @@ Page({
 		this.setData({text:e.detail.value})
 	},
 	addImg (){
+		var that = this
 		wxFunc.chooseImage().then(function(res){
 			wxFunc.imgUpInfo(res).then(function(values){
 				var obj = {}
 				var src = JSON.parse(values[1]).poster
+				console.log('upload res', src)
 				//obj.type = 'image',obj.width = values[0].width, obj.height = values[0].height,obj.src = JSON.parse(values[1]).poster
-				var image = this.data.imgBox.concat(src)
-				this.setData({imgBox:image})
-				console.log('imgBox',this.data.imgBox)
+				var image = that.data.imgBox.concat(src)
+				that.setData({imgBox:image})
+				console.log('imgBox',that.data.imgBox)
 			});
 		})
 	},

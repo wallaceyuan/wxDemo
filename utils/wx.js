@@ -1,9 +1,9 @@
- "use strict"
- 
+"use strict"
+
 var Promise = require('./promise.js')
 
-exports.chooseImage = function(){
-    return new Promise(function (resolve, reject){
+exports.chooseImage = function () {
+    return new Promise(function (resolve, reject) {
         wx.chooseImage({
             count: 1, // 默认9
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -11,11 +11,11 @@ exports.chooseImage = function(){
             success: resolve,
             fail: reject
         })
-    })    
+    })
 }
 
-var getImageInfo = function(res){
-    return new Promise(function (resolve, reject){
+var getImageInfo = function (res) {
+    return new Promise(function (resolve, reject) {
         wx.getImageInfo({
             src: res.tempFilePaths[0],
             success: resolve,
@@ -24,19 +24,21 @@ var getImageInfo = function(res){
     })
 }
 
-var uploadFile = function(res){
-    return new Promise(function (resolve, reject){
+var uploadFile = function (res) {
+    return new Promise(function (resolve, reject) {
         wx.uploadFile({
-            url: 'http://www.wallaceyuan.cn/upload',
+            method: 'POST',
+            url: 'https://api.wallaceyuan.cn/upload',
             filePath: res.tempFilePaths[0],
             name: 'uploadPoster',
-            formData:{
+            formData: {
                 'user': 'test'
             },
-            success: function(res){
+            success: function (res) {
                 resolve(res.data)
             },
-            fail: function(err){
+            fail: function (err) {
+                console.log('upload fail', err)
                 console.log(err)
             },
         })
@@ -44,6 +46,6 @@ var uploadFile = function(res){
 }
 
 
-exports.imgUpInfo = function(res){
-    return Promise.all([getImageInfo(res),uploadFile(res)])
+exports.imgUpInfo = function (res) {
+    return Promise.all([getImageInfo(res), uploadFile(res)])
 }
