@@ -1,12 +1,19 @@
+
 <!--pages/setfunc/setfunc.wxml-->
 <view class="widgets__item">
-    <view class="widgets__info" catchtap="scanCodeFunc">
-        <text class="widgets__info-name">扫码</text>
+  <view class="widgets__info" catchtap="scanCodeFunc">
+    <text class="widgets__info-name">扫码</text>
+  </view>
+  <navigator url="./message/message">
+    <view class="widgets__info">
+      <text class="widgets__info-name">消息模板</text>
     </view>
-    <view>
-    <navigator url="./message/message">
-        <view class="widgets__info">
-            <text class="widgets__info-name">消息模板</text>
-        </view>
-    </navigator>
+  </navigator>
+  <navigator url="./contact/contact" style="background-color: #eee;">
+    <view class="widgets__info">
+      <text class="widgets__info-name">客服会话</text>
+      <contact-button type="default-light" size="20" session-from="weapp">
+      </contact-button>
+    </view>
+  </navigator>
 </view>
